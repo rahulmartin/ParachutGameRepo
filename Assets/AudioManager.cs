@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
     public void PlayFailed()
     {
         musicSource.volume = 0;
+        failedSource.volume = 1f;
         failedSource.clip = failed;
         failedSource.Play();
     }
