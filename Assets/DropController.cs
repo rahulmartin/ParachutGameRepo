@@ -13,9 +13,17 @@ public class DropController : MonoBehaviour , Drops
     Animator animController;
     [SerializeField]
     TextMeshProUGUI tmproText;
-
+    [SerializeField]
+    TextMeshProUGUI tapsDisplay;
+    private int _tapsToDestroy = 2;
     private bool _questionResult;
 
+
+    public int tapsToDestroy
+    {
+        get { return _tapsToDestroy; }
+        set { _tapsToDestroy = value; }
+    }
     public bool isWrongStatement
     {
         get { return _questionResult; }
@@ -34,6 +42,7 @@ public class DropController : MonoBehaviour , Drops
     void Update()
     {
         parent.transform.position += Vector3.down * Time.deltaTime * droppingSpeed;
+        tapsDisplay.text = _tapsToDestroy.ToString();
     }
 
     private void OnEnable()

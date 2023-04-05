@@ -32,6 +32,7 @@ public class ExplosionManager : MonoBehaviour
         GameObject item = GameObject.Instantiate(explosionPrefab, position, Quaternion.identity);
         objects.Add(item);
         StartCoroutine(DelayAndCallback(item));
+        GameManager.instance.audioManager.PlayExplosion();
     }
 
     private IEnumerator DelayAndCallback(GameObject item)

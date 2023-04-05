@@ -62,6 +62,7 @@
     <Compile Include="Assets\ExplosionManager.cs" />
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\QuestionsProvider.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

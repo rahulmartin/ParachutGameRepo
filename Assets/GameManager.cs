@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI Level;
     [SerializeField]
     UnityEngine.UI.Image image;
+    public AudioManager audioManager;
 
     [SerializeField]
     float spawnDelay = 1f;
@@ -136,6 +137,13 @@ public class GameManager : MonoBehaviour
     public void OnObjectTouched(GameObject obj)
     {
         Drops controller = GetDrops(obj);
+        if(controller.tapsToDestroy > 1)
+        {
+            controller.tapsToDestroy--;
+            audioManager.PlayClick();
+            return;
+        }
+
         if(controller.isWrongStatement)
         {
             UpdateScore();
@@ -181,6 +189,8 @@ public class GameManager : MonoBehaviour
         RemoveAllObjects();
         explosionManager.CreateGameOverEffect();
         GameStarted = false;
+        audioManager.PlayFailed();
+        audioManager.PauseMusic();
     }
 
     public void EndGameNoHp()
@@ -188,6 +198,8 @@ public class GameManager : MonoBehaviour
         popUpManager.ShowPopup(PopupManager.PopUpType.LOST_BY_WRONGANSWER, ResetGame, "TryAgain", true);
         RemoveAllObjects();
         GameStarted = false;
+        audioManager.PlayFailed();
+        audioManager.PauseMusic();
     }
 
     public void LevelWonContinue()
@@ -209,6 +221,7 @@ public class GameManager : MonoBehaviour
 
         //Increase difficulty each level
         spawnDelay = Mathf.Clamp(spawnDelay - spawnDelay*0.5f, 1.5f, 4f);
+        audioManager.PlayMusic();
     }
 
     private void ResetGame()
@@ -221,6 +234,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score : 0";
         healthScore.text = "Lives : " + health;
         explosionManager.ClearExplosions();
+        audioManager.PlayMusic();
     }
 
     private void RemoveAnObject(GameObject obj, bool explosion = true)
@@ -244,5 +258,6 @@ public class GameManager : MonoBehaviour
 interface Drops
 {
     bool isWrongStatement { get; set; }
+    int tapsToDestroy { get; set; }
     void SetText(string s);
 }
