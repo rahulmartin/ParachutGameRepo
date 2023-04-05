@@ -17,13 +17,13 @@ public class InputManager : MonoBehaviour
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
             inputPosition = Input.touches[0].position;
+            CheckInput(inputPosition);
         } 
         else if(Input.GetMouseButton(0))
         {
             inputPosition = Input.mousePosition;
+            CheckInput(inputPosition);
         }
-
-        CheckInput(inputPosition);
     }
 
     void CheckInput(Vector2 input)

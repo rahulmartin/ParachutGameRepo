@@ -187,3 +187,7 @@ Received Import Request.
   path: Assets/Screenshot 2023-04-04 041002.png
   artifactKey: Guid(b3eb85260b69dfe45a39a8cd493de37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Screenshot 2023-04-04 041002.png using Guid(b3eb85260b69dfe45a39a8cd493de37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25ee699ddb49941d39e2b2cb4bf7df65') in 0.029378 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
