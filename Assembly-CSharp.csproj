@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PopupManager.cs" />
-    <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\DropController.cs" />
-    <Compile Include="Assets\ExplosionManager.cs" />
-    <Compile Include="Assets\InputManager.cs" />
-    <Compile Include="Assets\QuestionsProvider.cs" />
-    <Compile Include="Assets\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\PopupManager.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\DropController.cs" />
+    <Compile Include="Assets\Scripts\ExplosionManager.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\QuestionsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
